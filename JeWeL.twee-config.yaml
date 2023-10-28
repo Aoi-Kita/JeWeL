@@ -1,0 +1,6 @@
+sugarcube-2:
+
+  macros:
+
+    numberinput:
+      container: false

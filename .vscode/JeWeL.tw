@@ -1,17 +1,120 @@
-:: Japan Wonder Land {"position":"25,25"}
-Twee3 Example SugerCube File
+:: StoryTitle {"position":"25,25"}
+Japan Wonder Land
 
 :: StoryData {"position":"0,0"}
 {
-   "ifid": "4D60DBA2-FB73-45B4-BDB3-D8E50A5F7237",
+   "ifid": "F622C8F0-0025-4650-B84E-7B7E58142C1F",
    "format": "SugarCube",
-   "format-version": "2.30.0",
+   "format-version": "2.36.1",
    "start": "Start"
 }
 
-:: Start {"position":"150,0"}
-This is the starting passage.
-[[Second]]
+:: Start [nobr] {"position":"150,0"}
+<<set $player = {
+  name: "John",
+  surname: "Doe",
+  gender: "male",
+  age: 18,
+  home: "Houston"
+}>>
+
+<center>
+Before we start we need some information about the character you will be playing.
+</center>
+
+<br>
+
+<center>
+Each of these answers will be recorded and may impact options available to you as you progress, every option has the potential to open new doors, while closing others. Hover over the input's name for additional info on each option.
+</center>
+
+<br>
+
+<center>
+Keep in mind that the game heavily utilizes RNG in generating the story due to hidden passive checks as well as the active checks you select. At this time there is no plan to show probabilities, as the difficulty of a check should be revealed by text which COULD be dependent on your character's ability to assess the difficulty.
+</center>
+
+<br>
+
+<center>
+   <table width="80%">
+      <tr>
+         <th>
+            <span title="This is your first name, it will be a name that is used very often by people that are familiar with you, it is advised against using a pet names or a nickname and do not include honorifics of any kind.">
+               <<link "Name">><</link>>
+            </span>
+         </th>
+         <th>
+            <span title="This is your last name, it will be a name that is sometimes used by people that are formal or unfamiliar with you, do not include honorifics of any kind.">
+               <<link "Surname">><</link>>
+            </span>
+         </th>
+      </tr>
+      <tr>
+         <td><center><<textbox "$player.name" $player.name>></center></td>
+         <td><center><<textbox "$player.surname" $player.surname>></center></td>
+      </tr>
+   </table>
+   <table width="90%">
+      <tr>
+         <th width="25%">
+            <center>
+               <span title="Your age can effect the story in a number of ways, different ages will have certain people (and organizations) treat you differently.">
+                  <<link "Age">><</link>> 
+               </span>
+            </center>
+         </th>
+         <th width="25%">
+            <center>
+               <span title="Yes, there's two options, no it's not a policital statement, yes it determines what parts you have as well as how people see you.">
+                  <<link "Gender">><</link>>
+               </span>
+            </center>
+         </th>
+         <th width="25%">
+            <center>
+               <span title="This is where you were born, and still live. It will mostly effect what flights you'll have available to you.">
+                  <<link "Hometown">><</link>>
+               </span>
+            </center>
+         </th>
+         <th>
+            <center>
+               <span title="">
+                  <<link "">><</link>>
+               </span>
+            </center>
+         </th>
+      </tr>
+      <tr>
+         <td>
+            <center>
+               <<numberinput "$player.age" $player.age 17 19>>
+            </center>
+         </td>
+         <td>
+            <center>
+               <<radiobutton "$player.gender" "male" autocheck>> : Male
+               <br>
+               <<radiobutton "$player.gender" "female" autocheck>> : Female
+            </center>
+         </td>
+         <td>
+            <center>
+               <<listbox "$player.home" autoselect>>
+                  <<option "Houston">>
+                  <<option "Los Angeles">>
+               <</listbox>>
+            </center>
+         </td>
+         <td>
+            <center>
+
+            </center>
+         </td>
+      </tr>
+   </table>
+</center>
 
 :: Second {"position":"275,0"}
 This is the second passage.
