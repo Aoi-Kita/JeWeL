@@ -1,0 +1,17 @@
+:: Japan Wonder Land {"position":"25,25"}
+Twee3 Example SugerCube File
+
+:: StoryData {"position":"0,0"}
+{
+   "ifid": "4D60DBA2-FB73-45B4-BDB3-D8E50A5F7237",
+   "format": "SugarCube",
+   "format-version": "2.30.0",
+   "start": "Start"
+}
+
+:: Start {"position":"150,0"}
+This is the starting passage.
+[[Second]]
+
+:: Second {"position":"275,0"}
+This is the second passage.
