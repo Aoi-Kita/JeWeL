@@ -1,4 +1,4 @@
-:: sc-debugger [nobr]
+:: sc-debugger [nobr] {"position":"25,500"}
 
 <div id="sc-debugger-window">
 
