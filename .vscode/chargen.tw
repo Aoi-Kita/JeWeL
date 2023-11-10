@@ -1,4 +1,4 @@
-:: charGen [nobr] {"position":"275,0"}
+:: charGen [nobr] {"position":"275,25"}
 <center>
    <table width="80%">
       <tr>
@@ -127,15 +127,6 @@
       </tr>
       <tr>
          <td width="2px">
-            <<set $player.stat.VIG to random(20)>>
-            <<set $player.stat.VIT to random(20)>>
-            <<set $player.stat.END to random(20)>>
-            <<set $player.stat.MND to random(20)>>
-            <<set $player.stat.STR to random(20)>>
-            <<set $player.stat.DEX to random(20)>>
-            <<set $player.stat.INT to random(20)>>
-            <<set $player.stat.FTH to random(20)>>
-            <<set $player.stat.LCK to random(20)>>
             <div style="text-align: right;">
                <span id="stats">
                   $player.stat.VIG :<br>
@@ -299,29 +290,29 @@
    </table>
 </center>
 
-:: Name {"position":"150,125"}
+:: Name {"position":"150,150"}
 This is your character's first name, this name will be used in your full name as well as when you interact with people considered "friends" with you. There's not a lot to this and it's pretty inconsequential, however capitalization is important. It is advised against using pet names or nicknames or adding any kind of honorifics as these may be added by the story later and could visually conflict. Some characters may respond to you having specific names, the most common example will be if you share the same name. You can usually change your name at any time without any major consequences.
 
 >Name : <<textbox "$player.name" $player.name autofocus>>
 
 <<return>>
 
-:: Surname {"position":"275,125"}
+:: Surname {"position":"275,150"}
 This is your character's last name, or family name, or as written "surname" this will be used as your formal name in most instances as well as used in your full name. Capitalization is important, and as with the first name it's advised to not use pet names or nicknames, as these options are separate. It's also important to not include honorofics or affixes of any kind as these will be added by the story. Some characters may respond to you have specific names, while a good example is sharing the same last name, it is assumed to be a coincidence and will assume they are not related to you.
 
 >Surname : <<textbox "$player.surname" $player.surname autofocus>>
 
 <<return>>
 
-:: Age {"position":"25,250"}
-Your character's age, this can have no major effects or drastic effects. Underaged characters can have wildly different stories as the titular contest requires a legal adult, and can even effect the difficulty of accessing certain content potentially shutting you out of content entirely. CURRENTLY AGE 17 WILL DEAD END ON THE NEXT PAGE!!!
+:: Age {"position":"25,275"}
+Your character's age, this can have no major effects or drastic effects. Underaged characters can have wildly different stories as the titular contest requires a legal adult, and can even effect the difficulty of accessing certain content potentially shutting you out of content entirely. Changing this in the middle of the story could result in some logical inconsitencies. CURRENTLY AGE 17 WILL DEAD END ON THE NEXT PAGE!!! 
 
 >Age : <<numberinput "$player.age" $player.age 17 19>>
 
 <<return>>
 
-:: Gender {"position":"150,250"}
-Your character's gender, yes there are currently only two options and it directly effects your genitals as well as what people will see you as. This can drastically change the story, and new features may be added in the future. The story is prioritized to write for "Male" characters, so expect female content to be incomplete. THE STORY WILL CURRENTLY BAD END AS A FEMALE CHARACTER!
+:: Gender {"position":"150,275"}
+Your character's gender, yes there are currently only two options and it directly effects your genitals as well as what people will see you as. This can drastically change the story, and new features may be added in the future. The story is prioritized to write for "Male" characters, so expect female content to be incomplete. Changing this in the middle of the story can and will break the game. THE STORY WILL CURRENTLY BAD END AS A FEMALE CHARACTER!!!
 
 >Gender : 
 >><<radiobutton "$player.gender" "male" autocheck>> : Male
@@ -329,8 +320,8 @@ Your character's gender, yes there are currently only two options and it directl
 
 <<return>>
 
-:: Hometown {"position":"275,250"}
-This is the place your character was born and still lives, currently the origins are written to where your character hasn't been able to escape their hometown so there is currently no separate birthplace and hometown. The elements and details of your hometown are largely glossed over, mainly because your character is meant to have a disdain for their hometown and the biggest effect is what flights are available to you.
+:: Hometown {"position":"275,275"}
+This is the place your character was born and still lives, currently the origins are written to where your character hasn't been able to escape their hometown so there is currently no separate birthplace and hometown. The elements and details of your hometown are largely glossed over, mainly because your character is meant to have a disdain for their hometown and the biggest effect is what flights are available to you. Changing this in the middle of the story could have unintended consequences. 
 
 >Hometown :
 >> <<listbox "$player.home" autoselect>>
@@ -340,8 +331,129 @@ This is the place your character was born and still lives, currently the origins
 
 <<return>>
 
-:: Role {"position":"400,250"}
+:: Role {"position":"400,275"}
+Your character's role is generally how they work in a group, the idea is that it will effect which characters you meet in what order, as well as what events might unfold around you. It can also determine how certain characters react to you. The effects of this option are meant to mostly effect the early parts of the game, if changed during this time it may result in logical inconsitencies, if changed after a certain point it shouldn't effect anything.
 
-:: Attributes {"position":"25,375"}
+<<link "Leader">><<set $player.role to "Leader">><</link>> : You tend to be the decision maker of the group, while others may suggest things, they expect you to make the final choice and will typically follow suit. You will usually default to other people's skills to solve a problem, and in a fight rely on the group to fight with them.
 
-:: Skills {"position":"150,375"}
+<<link "Fighter">><<set $player.role to "Fighter">><</link>> : You tend to be the problem solver of the group, you don't usually make decisions and will only suggest things that maximize your ability to protect them. You rarely think too hard about solving problems and default to trying to solve them with brute force and usually volunteer yourself before you know if you can do it, and in a fight you tend to refuse help and desire to succeed alone or die trying.
+
+<<link "Joker">><<set $player.role to "Joker">><</link>> : You tend to be the morale booster of the group, you don't usually make decisions and any suggestions you make are usually in jest and ment to be ignored. You usually tend to be more of a distraction while other people solve problems, you usually instigate fights with your mockery as well as boosting team morale while tearing down opponent morale.
+
+<<link "Support">><<set $player.role to "Support">><</link>> : You tend to be the back bone of the group, you don't make decisions, and any suggestions you have are for the sake of others in the group. You approach any problem that faces the group as an assistant of another member of the group. In a fight you usually stand behind others, providing them with everything they need to succeed.
+
+<<link "Anchor">><<set $player.role to "Anchor">><</link>> : You're the one friend in the group that everybody centers around even though you provide no logical value to the group, you don't always make decisions but when you do it's non-negotiable. You don't approach any problems, expecting the group to handle them on their own, this also goes for fights were you sit back and wait for everybody around you to protect you.
+
+<<return>>
+
+:: Attributes {"position":"25,400"}
+Your attributes define a lot about you, these are commonly referred to as stats that will be used throughout the game either directly for some checks but also modify certain skills. It automatically rolled for you at the start but you are free to change them here, you may reroll them individually or set them directly. Keep in mind that a low stat can be just as interesting as a high one. Changing these mid game through this page should be disabled, simply opening this page mid game will likely break the game.
+<table width="90%">
+   <tr>
+      <th width="10%"></th>
+      <th width="25%"></th>
+      <th widht="55%"></th>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Vigor
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.VIG" $player.stat.VIG 0 20>>
+      </td>
+      <td>
+         Affects your pain tolerance, as well defining your overall well being.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Vitality
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.VIT" $player.stat.VIT 0 20>>
+      </td>
+      <td>
+         Affects your pain resistance, as well as defining your core strength.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Endurance
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.END" $player.stat.END 0 20>>
+      </td>
+      <td>
+         Affects your fatigue and stamina, defining your overall energy.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Mind
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.MND" $player.stat.MND 0 20>>
+      </td>
+      <td>
+         Affects your stress tolerance, defining your mental health.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Strength
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.STR" $player.stat.STR 0 20>>
+      </td>
+      <td>
+         Defines your physical power mostly referring to your limbs.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Dexterity
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.DEX" $player.stat.DEX 0 20>>
+      </td>
+      <td>
+         Defines your capability of controlling your body, and your range of mobility.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Intelligence
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.INT" $player.stat.INT 0 20>>
+      </td>
+      <td>
+         Defines your mental prowess and brain power.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Faith
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.FTH" $player.stat.FTH 0 20>>
+      </td>
+      <td>
+         Defines your spiritual affinity and understanding of religion and ceremonies.
+      </td>
+   </tr>
+   <tr>
+      <td style="text-align: right;">
+         Luck
+      </td>
+      <td style="text-align: center;">
+         <<numberinput "$player.stat.LCK" $player.stat.LCK 0 20>>
+      </td>
+      <td>
+         How common are fortunate (or unfortunate) events occurring for you.
+      </td>
+   </tr>
+</table>
+<<return>>
+
+:: Skills {"position":"150,400"}
