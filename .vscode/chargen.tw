@@ -346,114 +346,236 @@ Your character's role is generally how they work in a group, the idea is that it
 
 <<return>>
 
-:: Attributes {"position":"25,400"}
-Your attributes define a lot about you, these are commonly referred to as stats that will be used throughout the game either directly for some checks but also modify certain skills. It automatically rolled for you at the start but you are free to change them here, you may reroll them individually or set them directly. Keep in mind that a low stat can be just as interesting as a high one. Changing these mid game through this page should be disabled, simply opening this page mid game will likely break the game.
+:: Attributes [nobr] {"position":"25,400"}
+Your attributes define a lot about you, these are commonly referred to as stats that will be used throughout the game either directly for some checks but also modify certain skills. It automatically rolled for you at the start but you are free to change them here, you may reroll them individually by clicking on the attribute name or set them directly. Keep in mind that a low stat can be just as interesting as a high one. Changing these mid game through this page should be disabled, simply opening this page mid game will likely break the game.
+
+<br>
+
 <table width="90%">
    <tr>
-      <th width="10%"></th>
-      <th width="25%"></th>
-      <th widht="55%"></th>
+      <th width="10%" style="text-align: right;">
+         Attribute
+      </th>
+      <th width="25%" style="text-align: center;">
+         Stat
+      </th>
+      <th widht="55%">
+         Description
+      </th>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Vigor
+         <<link "Vigor">>
+            <<set $player.stat.VIG to random(20)>>
+            <<replace "#VIG">>
+               <<numberinput "$player.stat.VIG" $player.stat.VIG 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.VIG" $player.stat.VIG 0 20>>
+         <span id="VIG">
+            <<numberinput "$player.stat.VIG" $player.stat.VIG 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Affects your pain tolerance, as well defining your overall well being.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Vitality
+         <<link "Vitality">>
+            <<set $player.stat.VIT to random(20)>>
+            <<replace "#VIT">>
+               <<numberinput "$player.stat.VIT" $player.stat.VIT 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.VIT" $player.stat.VIT 0 20>>
+         <span id="VIT">
+            <<numberinput "$player.stat.VIT" $player.stat.VIT 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Affects your pain resistance, as well as defining your core strength.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Endurance
+         <<link "Endurance">>
+            <<set $player.stat.END to random(20)>>
+            <<replace "#END">>
+               <<numberinput "$player.stat.END" $player.stat.END 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.END" $player.stat.END 0 20>>
+         <span id="END">
+            <<numberinput "$player.stat.END" $player.stat.END 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Affects your fatigue and stamina, defining your overall energy.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Mind
+         <<link "Mind">>
+            <<set $player.stat.MND to random(20)>>
+            <<replace "#MND">>
+               <<numberinput "$player.stat.MND" $player.stat.MND 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.MND" $player.stat.MND 0 20>>
+         <span id="MND">
+            <<numberinput "$player.stat.MND" $player.stat.MND 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Affects your stress tolerance, defining your mental health.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Strength
+         <<link "Strength">>
+            <<set $player.stat.STR to random(20)>>
+            <<replace "#STR">>
+               <<numberinput "$player.stat.STR" $player.stat.STR 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.STR" $player.stat.STR 0 20>>
+         <span id="STR">
+            <<numberinput "$player.stat.STR" $player.stat.STR 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Defines your physical power mostly referring to your limbs.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Dexterity
+         <<link "Dexterity">>
+            <<set $player.stat.DEX to random(20)>>
+            <<replace "#DEX">>
+               <<numberinput "$player.stat.DEX" $player.stat.DEX 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.DEX" $player.stat.DEX 0 20>>
+         <span id="DEX">
+            <<numberinput "$player.stat.DEX" $player.stat.DEX 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Defines your capability of controlling your body, and your range of mobility.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Intelligence
+         <<link "Intelligence">>
+            <<set $player.stat.INT to random(20)>>
+            <<replace "#INT">>
+               <<numberinput "$player.stat.INT" $player.stat.INT 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.INT" $player.stat.INT 0 20>>
+         <span id="INT">
+            <<numberinput "$player.stat.INT" $player.stat.INT 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Defines your mental prowess and brain power.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Faith
+         <<link "Faith">>
+            <<set $player.stat.FTH to random(20)>>
+            <<replace "#FTH">>
+               <<numberinput "$player.stat.FTH" $player.stat.FTH 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.FTH" $player.stat.FTH 0 20>>
+         <span id="FTH">
+            <<numberinput "$player.stat.FTH" $player.stat.FTH 0 20>>
+         </span>
+         <br>
       </td>
       <td>
          Defines your spiritual affinity and understanding of religion and ceremonies.
       </td>
    </tr>
-   <tr>
+   <tr style="height:50px">
       <td style="text-align: right;">
-         Luck
+         <<link "Luck">>
+            <<set $player.stat.LCK to random(20)>>
+            <<replace "#LCK">>
+               <<numberinput "$player.stat.LCK" $player.stat.LCK 0 20>>
+            <</replace>>
+         <</link>>
       </td>
       <td style="text-align: center;">
-         <<numberinput "$player.stat.LCK" $player.stat.LCK 0 20>>
+         <span id="LCK">
+            <<numberinput "$player.stat.LCK" $player.stat.LCK 0 20>>
+         </span>
       </td>
       <td>
          How common are fortunate (or unfortunate) events occurring for you.
       </td>
    </tr>
 </table>
+
+<<button "Reroll All">>
+   <<set $player.stat.VIG to random(20)>>
+   <<set $player.stat.VIT to random(20)>>
+   <<set $player.stat.END to random(20)>>
+   <<set $player.stat.MND to random(20)>>
+   <<set $player.stat.STR to random(20)>>
+   <<set $player.stat.DEX to random(20)>>
+   <<set $player.stat.INT to random(20)>>
+   <<set $player.stat.FTH to random(20)>>
+   <<set $player.stat.LCK to random(20)>>
+   <<replace "#VIG">>
+      <<numberinput "$player.stat.VIG" $player.stat.VIG 0 20>>
+   <</replace>>
+   <<replace "#VIT">>
+      <<numberinput "$player.stat.VIT" $player.stat.VIT 0 20>>
+   <</replace>>
+   <<replace "#END">>
+      <<numberinput "$player.stat.END" $player.stat.END 0 20>>
+   <</replace>>
+   <<replace "#MND">>
+      <<numberinput "$player.stat.MND" $player.stat.MND 0 20>>
+   <</replace>>
+   <<replace "#STR">>
+      <<numberinput "$player.stat.STR" $player.stat.STR 0 20>>
+   <</replace>>
+   <<replace "#DEX">>
+      <<numberinput "$player.stat.DEX" $player.stat.DEX 0 20>>
+   <</replace>>
+   <<replace "#INT">>
+      <<numberinput "$player.stat.INT" $player.stat.INT 0 20>>
+   <</replace>>
+   <<replace "#FTH">>
+      <<numberinput "$player.stat.FTH" $player.stat.FTH 0 20>>
+   <</replace>>
+   <<replace "#LCK">>
+      <<numberinput "$player.stat.LCK" $player.stat.LCK 0 20>>
+   <</replace>>
+<</button>>
+
+<br><br>
+
 <<return>>
 
 :: Skills {"position":"150,400"}
