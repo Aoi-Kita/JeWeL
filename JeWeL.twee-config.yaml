@@ -1,6 +1,6 @@
 sugarcube-2:
-
   macros:
-
     numberinput:
       container: false
+    d20:
+      name: d20

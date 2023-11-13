@@ -9,7 +9,7 @@ Japan Wonder Land
    "start": "Start"
 }
 
-:: Start [nobr] {"position":"150,25"}
+:: Start {"position":"150,25"}
 <<set $player = {
   name: "John",
   surname: "Doe",
@@ -27,6 +27,10 @@ Japan Wonder Land
    INT: random(20),
    FTH: random(20),
    LCK: random(20)
+  },
+  skill: {
+    gamble: 0,
+    finance: 0
   }
 }>>
 
@@ -50,5 +54,6 @@ Keep in mind that the game heavily utilizes RNG in generating the story due to h
 
 [[Character Creation|charGen]]
 
-:: Second {"position":"400,25"}
-This is the second passage.
+:: configSet [script] {"position":"25,525"}
+Config.history.controls = false;
+Config.passages.nobr = true;

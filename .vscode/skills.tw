@@ -1,0 +1,61 @@
+:: Skills {"position":"150,400"}
+This skill page has a list of all skills each under their governing attribute, pick as many as you want.
+
+
+<blockquote>
+    Vigor
+    <blockquote>
+
+    </blockquote>
+</blockquote>
+<blockquote>
+    Vitality
+    <blockquote>
+
+    </blockquote>
+</blockquote>
+<blockquote>
+    Endurance
+    <blockquote>
+
+    </blockquote>
+</blockquote>
+<blockquote>
+    Mind
+    <blockquote>
+
+    </blockquote>
+</blockquote>
+<blockquote>
+    Strength
+    <blockquote>
+
+    </blockquote>
+</blockquote>
+<blockquote>
+    Dexterity
+    <blockquote>
+
+    </blockquote>
+</blockquote>
+<blockquote>
+    Intelligence
+    <blockquote>
+
+    </blockquote>
+</blockquote>
+<blockquote>
+    Faith
+    <blockquote>
+    
+    </blockquote>
+</blockquote>
+<blockquote>
+    Luck
+    <blockquote>
+        <<checkbox "$player.skill.gamble" 0 5 autocheck>> Gambling - Your general "ability" when it comes to gambling. <br>
+        <<checkbox "$player.skill.finance" 0 5 autocheck>> Finance - The amount of money you find or earn. <br>
+    </blockquote>
+</blockquote>
+
+<<return>>
