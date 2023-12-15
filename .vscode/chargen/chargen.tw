@@ -291,7 +291,7 @@
 
 <br>
 
-[[Origin]]
+--BROKEN LINK--
 
 </center>
 
@@ -629,64 +629,7 @@ Your attributes define a lot about you, these are commonly referred to as stats 
 
 <<return>>
 
-:: Origin {"position":"400,25"}
-
-For the uninitiated: This story is about somebody (you) winning a sort of tourism lottery prize where you are granted not only a free trip to a fictional version of  Japan, but also an immense amount of money given to you to spend as that tourist.
-
-<br><br>
-
-Below is a list of "origins" which describe how you came about receiving/winning the lottery to begin with, each origin is designed to give some unique effects through the story, from whole characters and unique possessions, to dialog choices and flavor texts. Keep in mind that choices you made on the previous page can actually effect which origins are visible here.
-
-<br><br>
-
-<<if $player.age >= 18>>
-   [[Self Made|Ticket][$player.origin to "Self Made"]] : You've spent most of your life paying into this lottery, every job you worked has been meaningless and forgetful, you turned into a zombie as you worked day in and day out at job after job, pumping any extra income into winning this trip. Once you arrive in Japan your goal is to forget everything that happened before and restart your life.
-
-   <br><br>   
-<</if>>  
-
-<<if $player.age >= 18>>
-   [[Old Friend|Ticket][$player.origin to "Old Friend"]] : INCOMPLETE
-
-   <br><br>
-<</if>>
-
-<<if $player.age <= 17>>
-   [[Birthday Gift|Ticket][$player.origin to "Birthday Gift"]] : INCOMPLETE
-
-   <br><br>
-
-   INCORRECT AGE RANGE, WILL BE FIXED IN FUTURE!
-
-   <br><br>
-
-   <<return>>
-<</if>>
-
-:: Ticket {"position":"525,25"}
-As stated before the lottery your character wins to begin the story is a free trip to Japan and a lot of cash to spend when you get there. For now this page is used to generate the amount you receive, cunnigly this page seems to be unable to tell you how much you will receive.
-
-<br><br>
-
-This page is also a final farewell to the character creation process, everything beyond this point will be told from an in character perspective. With some exceptions.
-
-
-
-<<if ndef $player.origin>>
-      ERROR : NO ORIGIN <<return>>
-   <<elseif $player.origin is "Self Made">>  [[Start|Self Made]]
-   <<elseif $player.origin is "Old Friend">> [[Start|Old Friend]]
-   <<else>>ERROR : ORIGIN NOT FOUND <<return>>     
-<</if>>
-<<set $ticket to 0>>
-<<for $ticket is 0>>
-   <<d20 $player.skill.finance $player.stat.LCK>>
-   <<set $ticket to _check * 10000000000>><<set $ticket to Math.trunc($ticket)>>  
-<</for>>
-<<if $player.origin is "Self Made">>
-   <<d20 $player.skill.gamble $player.stat.LCK>>
-   <<set $ticket to _check * 10000000000 + $ticket>><<set $ticket to Math.trunc($ticket)>>
-<</if>>
+:: Status {"position":"525,25"}
 
 <<set $player.pain to ($player.stat.VIG * 3) + ($player.stat.VIT * 2) + $player.stat.END>> $player.pain
 <<set $player.stress to $player.stat.VIG + ($player.stat.MND *3) + $player.stat.FTH>> $player.stress

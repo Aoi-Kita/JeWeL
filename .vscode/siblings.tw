@@ -1,0 +1,45 @@
+:: StoryTitle {"position":"25,25"}
+Siblings
+
+:: StoryData {"position":"25,150"}
+{
+   "ifid": "93BB53BA-4A25-4178-8496-2716DB37716C",
+   "format": "SugarCube",
+   "format-version": "2.36.1",
+   "start": "Start"
+}
+
+:: Start {"position":"150,25"}
+<<set $player = {
+  name: "John",
+  surname: "Doe",
+  gender: "male",
+  age: 18,
+  home: "Houston",
+  role: "Leader",
+  stat: {
+   VIG: random(20),
+   VIT: random(20),
+   END: random(20),
+   MND: random(20),
+   STR: random(20),
+   DEX: random(20),
+   INT: random(20),
+   FTH: random(20),
+   LCK: random(20)
+  },
+  skill: {
+    perception: 0,
+    gamble: 0,
+    finance: 0,
+    deception: 0
+  }
+}>>
+
+Hello World~!
+
+[[Character Creation|charGen]]
+
+:: configSet [script] {"position":"25,525"}
+Config.history.controls = false;
+Config.passages.nobr = true;
