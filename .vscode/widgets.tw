@@ -3,5 +3,5 @@
     <<set _roll to random(20)>>
     <<set _prof to _roll + _args[0]>> /* _args[0] = Skill */
     <<set _mod to _args[1] * _roll / 100>> /* _args[1] = Stat */
-    <<set _check to _prof * _mod + _prof>>
+    <<set _check to Math.trunc(_prof * _mod + _prof)>>
 <</widget>>

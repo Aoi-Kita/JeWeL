@@ -23,7 +23,7 @@ This skill page has a list of all skills each under their governing attribute, p
 <blockquote>
     Mind
     <blockquote>
-
+        <<checkbox "$player.skill.perception" 0 5 autocheck>> Perception - Situational awareness and eye for detail.
     </blockquote>
 </blockquote>
 <blockquote>

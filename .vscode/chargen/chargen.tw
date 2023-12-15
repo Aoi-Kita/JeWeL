@@ -370,7 +370,7 @@ This is the place your character was born and still lives, currently the origins
 
 <<return>>
 
-:: Role {"position":"400,275"}
+:: Role {"position":"275,400"}
 Your character's role is generally how they work in a group, the idea is that it will effect which characters you meet in what order, as well as what events might unfold around you. It can also determine how certain characters react to you. The effects of this option are meant to mostly effect the early parts of the game, if changed during this time it may result in logical inconsitencies, if changed after a certain point it shouldn't effect anything.
 
 <br><br>
@@ -668,9 +668,9 @@ As stated before the lottery your character wins to begin the story is a free tr
 
 <br><br>
 
-This page is also a final farewell to the character creation process, everything beyond this point will be told from an in character perspective. Please note that within the first few pages there are what we can call "expositional" choices that can describe events that happened previously. Selecting them makes them true, not selecting them makes them false.
+This page is also a final farewell to the character creation process, everything beyond this point will be told from an in character perspective. With some exceptions.
 
-<br><br>
+
 
 <<if ndef $player.origin>>
       ERROR : NO ORIGIN <<return>>
@@ -687,3 +687,7 @@ This page is also a final farewell to the character creation process, everything
    <<d20 $player.skill.gamble $player.stat.LCK>>
    <<set $ticket to _check * 10000000000 + $ticket>><<set $ticket to Math.trunc($ticket)>>
 <</if>>
+
+<<set $player.pain to ($player.stat.VIG * 3) + ($player.stat.VIT * 2) + $player.stat.END>> $player.pain
+<<set $player.stress to $player.stat.VIG + ($player.stat.MND *3) + $player.stat.FTH>> $player.stress
+<<set $player.fatigue to ($player.stat.VIG * 2) + ($player.stat.VIT * 2) + ($player.stat.END * 3) + $player.stat.STR + $player.stat.DEX>> $player.fatigue

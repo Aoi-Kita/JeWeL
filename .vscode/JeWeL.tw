@@ -29,8 +29,10 @@ Japan Wonder Land
    LCK: random(20)
   },
   skill: {
+    perception: 0,
     gamble: 0,
-    finance: 0
+    finance: 0,
+    deception: 0
   }
 }>>
 
